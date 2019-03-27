@@ -61,3 +61,10 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import $ from 'jquery'
+window['jQuery'] = $;
+
+declare let require: any;
+
+require("../semantic/dist/semantic.min.js");
+require( "../semantic/dist/components/dropdown.js");

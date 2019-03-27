@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import $ from 'jquery'
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,17 @@ export class AppComponent {
   ];
   allData = this.data;
   criteria = "";
+  planTypes = [{
+    name: "",
+    zone: "zone1"
+  }, {
+    name: "",
+    zone: "zone2"
+  }, {
+    name: "",
+    zone: "myzone"
+  }];
+  selectedPlanType: any;
 
   public showHide(): void {
     if (!this.toggle) {
@@ -45,5 +57,29 @@ export class AppComponent {
       }
       return found;
     });
+  }
+
+  public planSelected(planType) {
+    console.log(planType);
+    this.selectedPlanType = planType;
+  }
+
+  public onChange(data) {
+    console.log(data);
+  }
+
+  ngAfterViewInit() {
+    $('.ui.dropdown').dropdown();
+    $('.ui.selection.dropdown')
+      .dropdown({
+        clearable: true
+      })
+      ;
+    $('.ui.inline.dropdown')
+      .dropdown({
+        clearable: true,
+        placeholder: 'any'
+      })
+      ;
   }
 }
