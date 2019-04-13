@@ -7,7 +7,7 @@ import $ from 'jquery'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bmw7';
+  title = 'laB7';
   columns = ["name", "sirname", "age"];
   allColumns = ["name", "sirname", "age"];
   toggle = false;
